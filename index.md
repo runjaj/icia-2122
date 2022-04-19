@@ -1,42 +1,141 @@
-+++
-title = "Julia Tutorials Template"
-tags = ["code", "tutorials"]
-+++
+# Presentación
 
-# Julia Tutorials Template
+## 102591 Instalaciones auxiliares en la industria alimentaria (2021-22)
 
-This is a template repository which can be used to create Julia tutorials websites.
-To use this website as a template, go to
-<https://github.com/rikhuijzer/JuliaTutorialsTemplate>
-and click on the big "Use this template" button.
+### Instrumentación y control de procesos
 
-Some general information is provided below.
-For more in-depth instructions about how to use this template, see [Getting started](/getting-started).
+#### Profesor
 
-## What does this template do?
+Javier Arántegui
+Dept. de Tecnologia d'Aliments
+Desp. 2.2.13
 
-This template contains multiple Pluto notebooks in the `tutorials` folder.
-These tutorials are listed on the left side of this webpage.
-Here,
+#### Consultas
 
-1. each tutorial is created and updated in [Pluto.jl](https://github.com/fonsp/Pluto.jl), which is super easy and convenient ✔️,
-1. evaluated and converted to Markdown files in parallel and with caching (for speed 🚀) by [PlutoStaticHTML.jl](https://github.com/rikhuijzer/PlutoStaticHTML.jl) _and_
-1. the tutorials are embedded in a nice website by [Franklin.jl](https://github.com/tlienart/Franklin.jl) 😎.
+Se contestarán las dudas a través de la mensajería del campus virtual, si son breves. También en persona o por videoconferencia acordando previamente una cita.
 
-These steps all run in an automated workflow, so changing a file in your copy of this template will cause the notebooks to be evaluated again (or not, if nothing changed since the last run).
+#### Descripción del contenido
 
-## How can I make my own tutorials?
+En esta parte de la asignatura se porporcionará el conocimiento, la sistemática y las técnicas de actuación necesarias para diseñar los sistemas de control de los sistemas de procesado de alimentos. Este es un curso de introducción y solo se verán las herramientas más básicas y no se profundizará en herramientas más avanzadas.
 
-- Copy the [template](https://github.com/rikhuijzer/JuliaTutorialsTemplate) by clicking on big "Use this template" button.
-- Replace the Pluto notebooks (`.jl` files) inside `tutorials` by your own tutorials.
-- Change the menu at `layout/menu.html` to point to the right tutorials.
-- Modify any text however you like, the source code has an MIT license.
-- GitHub will take your tutorials and convert them automatically to a pretty website.
+Esto significa que al acabar tienes que ser capaz de diseñar el sistema de control de una operación en una industria alimentaria. Por ejemplo, lograr que un pasteurizador trabaje a la temeperatura adecuada y que tenga la capacidad de adaptarse a las condiciones de operación que se vayan presentando.
 
-## What alternatives are there to this template?
+Realizaremos un enfoque eminentemente práctico, aunque no olvidaremos las partes teóricas más importantes. Tendréis disponible un pequeño ordenador con un proceso y un medidor que utilizaremos para aplicar expermentalmente la materia. Durante el curso utilizaremos de manera habitual [Julia](https://www.julialang.org).
 
-There is a template by Fons van der Plas at <https://github.com/JuliaPluto/static-export-template>.
-That template is easier to use, sticks closer to the original Pluto appearance and has a link to a Binder for each notebook.
-In contrast, this template provides more flexibility in appearance and is more suitable for people who like to style their output or who even want to hide all code.
-Also, this template assumes some knowledge about GitHub Actions and hosting a website via GitHub Pages.
+#### Objetivos
+
+##### Objetivo general
+
+Proporcional el conocimiento, la sistemática y las técnicas de actuación necesaria para diseñar los sistemas de control de los sistemas de procesado de alimentos.
+
+##### Objetivos específicos
+
+En esta parte queremos sentar las bases del control de procesos por retroalimentación en la industria alimentaria y ofrecer las herramientas necesarias para poder aplicar el control de procesos en cualquier industria alimentaria.
+
+Los objetivos específicos para lograrlo son:
+
+- **Introducción:**
+	* Conocer la importancia del control de procesos en la industria alimentaria moderna.
+	* Conocer los principales elementos de un lazo de control.
+	* Conocer los principales instrumentos de medida y actuadores utilizados en la industria alimentaria.
+	* Decidir con criterio en que casos utilizar un sistema de control por retroalimentación o en adelanto.
+- **Dinámica de sistemas de control por retroalimentación:**
+	* Plantear el modelo matemático de una operación básica o de un proceso alimentaria para poder predecir su comportamiento en función del tiempo.
+	* Analizar un sistema de control por retroalimentación.
+	* Conocer que lazos de control existen en los proncipales procesos alimentarios.
+	* Conocer el comportamiento dinámico de las principales acciones de control.
+	* Valorar la influencia de los retrasos en el comportamiento dinámico de un sistema de control.
+	* Calcular el comportamiento dinámico de un lazo de control por retroalimentación.
+- **Diseño de sistemas de control:**
+	* Diseñar un lazo de control por retroalimentación de un procesos, seleccionando adecuadamente el controlador y sus parámetros óptimos.
+	* Tener la capacidad de implementar un lazo de control en un proceso alimentario.
+	* Ser capaz de evaluar y mejorar el comportamiento de un lazo de contro existmnte.
+
+<!--
+#### Contenido de la asignatura y calendario previsto
+
+Este es la planificación prevista de la asignatura:
+
+**Día** - Contenido (Horas)
+
+**30 de abril**
+: Presentación
+1 - Introducción al control de procesos (4)
+
+**4 de mayo**
+: 1 - Introducción al control de procesos (2)
+
+**5 de mayo**
+: 3 - Cómo abordar la dinámica de un sistema (2) 
+
+**6 de mayo**
+: 3 - Cómo abordar la dinámica de un sistema (1)
+
+**7 de mayo**
+: 4 - Sistemas de primer orden (2)
+
+**11 de mayo** ¡¡FIESTA!!
+: 5 - Sistemas de segundo orden (1)
+
+**12 de mayo**
+: 6 - Acciones de control (2)
+
+**13 de mayo**
+: 7 - Control por retroalimentación de sistemas lineales (1)
+
+**14 de mayo**
+: 7 - Control por retroalimentación de sistemas lineales (2)
+
+**18 de mayo**
+: 8 - Análisis de estabilidad. Routh-Hurvitz (1)
+
+**19 de mayo**
+: 8 - Análisis de estabilidad. Lugar de las raíces (2)
+
+**20 de mayo**
+: 8 - Análisis de estabilidad. Diagramas de Bode (1)
+
+**21 de mayo**
+: 8 - Análisis de estabilidad. Criterio de estabilidad de Bode (3)
+
+**25 de mayo**
+9 - Métodos semiempíricos (1)
+
+**26 de mayo**
+: 9 - Métodos semiempíricos (1+1)
+
+**27 de mayo**
+: 9 - Métodos semiempíricos (1)
+
+**28 de mayo**
+: 2 - Instrumentación industrial (2)
+
+**1 de junio**
+: 10 - Control avanzado (1)
+
+**2 de junio**
+: 10 - Control avanzado (2)
+
+**3 de junio**
+: Problemas y dudas (1)
+
+**4 de junio**
+: Problemas y dudas (1+1)
+
+**21 de junio**
+: EXAMEN
+→
+
+#### Bibliografía y otro material
+
+En esta web hay unos apuntes de la materia, junto con una colección de problemas, con muchos de ellos resueltos.
+
+Un libro gratuito sobre control de procesos es [Control Systems](http://en.wikibooks.org/wiki/Control_Systems). El libro se puede consultar en líneea, también hay disponible una versión para imprimir y otra en pdf. El libro es de distribución gratuita. Es una fuente de información muy recomendable
+
+El [MIT](http://mit.edu/) ofrece a través de su iniciativa [Opencourseware](http://ocw.mit.edu) el material docente de muchos de sus cursos. Hay material de varias asignaturas relacionadas con el control de procesos desde diferente puntos de vista, como pueden ser los de la ingeniería química, electrónica o aeronaítica. Uno de los cursos de temática más similar es [10.450 Process Dynamics, Operations, and Control](http://ocw.mit.edu/courses/chemical-engineering/10-450-process-dynamics-operations-and-control-spring-2006/index.htm).
+
+Algunos enlaces de interés
+
+* [Control Engineering](http://www.controleng.com/)
+* [Feedback and Temperature Control](http://newton.ex.ac.uk/teaching/CDHW/Feedback/index.html)
 
