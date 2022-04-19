@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/icia-2122/assets/favicon.png">
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  };
+</script>
+
+<!-- This weird alignment is required by Franklin's parser. -->
+<script
+    async
+    src="/icia-2122/assets/MathJax/MathJax-3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff">
+}
+</style>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff">
+}
+</style>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff">
+}
+</style>
+
+  <link rel="stylesheet"
+  href="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/styles/github.min.css">
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/highlight.min.js">
+</script>
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/languages/julia.min.js">
+</script>
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/languages/julia-repl.min.js">
+</script>
+
+<script>
+  hljs.configure({tabReplace: '    '});
+  hljs.highlightAll();
+</script>
+
+    <style>
+    @font-face {
+      font-family: JuliaMono-Regular;
+      src: url("/JuliaTutorialsTemplate//assets/JuliaMono/juliamono-0.044/webfonts/JuliaMono-Regular.woff2");
+    }
+    </style>
+
+  <link rel="stylesheet" href="/icia-2122/css/spectre.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-exp.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-icons.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-overrides.css">
+  <link rel="stylesheet" href="/icia-2122/css/docs.min.css">
+
+  <title>Breve historia del control de procesos - Control de Procesos 21-22</title>
+  <meta name="description" content="A template for building websites with Julia language content. Easily create Pluto notebooks and publish them online.">
+</head>
+<body>
+  <div class="docs-container off-canvas off-canvas-sidebar-show">
+  <div class="docs-navbar">
+    <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+    <div class="btns d-flex">
+      <a class="btn btn-primary ml-1" href="https://github.com/runjaj/icia-2122">GitHub</a>
+    </div>
+</div>
+
+<div id="sidebar" class="docs-sidebar off-canvas-sidebar">
+
+<div class="docs-brand">
+    <h5><a href="/icia-2122/">Control de procesos 21-22</a></h5>
+</div>
+
+<div class="docs-nav">
+<div class="accordion-container">
+  <ul class="menu menu-nav">
+    <div class="menu-header">Presentación</div>
+    <li class='menu-item '><a href='/icia-2122/index/'>Presentación</a></li>
+    <br/>
+    <div class="menu-header">Unidad 1. Introducción</div>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/unidad01/'>1. Introducción</a></li>
+    <li class='menu-item active'><a href='/icia-2122/Unidad01/1_historia/'>1.1. Breve historia del control de procesos</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/2_contexto/'>1.2. Contexto de la disciplina</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/3_descripción/'>1.3. Descripción cualitativa de un ejemplo de proceso alimentario y su sistemas de control</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/4_conceptos/'>1.4. Conceptos generales</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/problemas01/'>Problemas</a></li>
+  </ul>
+</div>
+</div>
+</div>
+<a class="off-canvas-overlay" href="#close"></a>
+
+
+<div class="off-canvas-content">
+<div id="content" class="docs-content">
+<div class="container">
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="breve_historia_del_control_de_procesos"><a href="#breve_historia_del_control_de_procesos" class="header-anchor">Breve historia del control de procesos</a></h1>
+<h2 id="en_la_antiguedad"><a href="#en_la_antiguedad" class="header-anchor">En la antiguedad</a></h2>
+<p>Los primeros sistemas de control conocidos, ya en la antigüedad, son mecanismos destinados al control del caudal para regular un reloj de agua o el control de nivel de líquido en una lámpara de aceite o en un recipiente de vino, que se mantiene lleno a pesar de los muchos vasos que se sacan. De hecho, el control del caudal de fluido se reduce al control del nivel del fluido, ya que un pequeño orificio producirá caudal constante si la presión es constante. El mecanismo de control de nivel de líquido inventado en la antigüedad y todavía usado para controlar nivel es la válvula flotante, semejante a la del depósito de agua de un inodoro corriente. El flotador está hecho de tal manera que, cuando el nivel baja, el caudal del depósito aumenta y cuando el nivel sube, el caudal disminuye y, si es necesario, se corta &#40;&#123;numref&#125;<code>romanos</code>&#41;. En este caso el sensor y el actuador están combinados en el mismo dispositivo, el flotador y la combinación de tubo de alimentación.</p>
+
+<figure style="text-align:center;">
+<img src="/icia-2122/Unidad01/romanos.svg" style="padding:0; width:50%" alt=" Un tonel que nunca se acaba. Ejemplo del control de nivel de líquido y caludal tal como se realizaba en la antiguedad."/>
+<figcaption> Un tonel que nunca se acaba. Ejemplo del control de nivel de líquido y caludal tal como se realizaba en la antiguedad.</figcaption>
+</figure>
+
+<h2 id="durante_la_revolución_industrial"><a href="#durante_la_revolución_industrial" class="header-anchor">Durante la revolución industrial</a></h2>
+<p>Un caso más moderno de control por retroalimentación es el control de temperatura de un horno para calentar una incubadora, sistema que fue diseñado por <a href="https://es.wikipedia.org/wiki/Cornelius_Drebbel">Cornelius Drebbel</a> &#40;hacia 1620&#41;. El horno constaba de una caja que contenía el fuego, con un tubo en la parte superior provisto de un regulador de tiro &#40;&#123;numref&#125;<code>drebbel</code>&#41;. Dentro de la cámara de combustión estaba la incubadora de paredes dobles y el hueco que quedaba entre las paredes se llenaba de agua. El sensor de temperatura era un recipiente de vidrio lleno de alcohol y mercurio colocado en la cámara de agua en torno a la incubadora. A medida que el fuego calentaba la caja y el agua, eubadora. A medida que el fuego calentaba la caja y el agua, ubadora. A medida que el fuego calentaba la caja y el agua, eubadora. A medida que el fuego calentaba la caja y el agua, el alcohol se dilataba y el vástago con flotador se desplazaba hacia arriba, bajando el regulador de tiro sobre la boca del tubo. Si la caja está demasiado fría, el alcohol se contrae, el regulador de tiro se abre y el fuego arde más fuertemente. La temperatura deseada está determinada por la longitud del vástago del flotador, que determina la apertura del regulador de tiro para una dilatación determinada de alcohol.</p>
+
+<figure style="text-align:center;">
+<img src="/icia-2122/Unidad01/drebbel.png" style="padding:0; " alt=" Croquis de la incubadora de Drebbel para empollar huevos de gallina."/>
+<figcaption> Croquis de la incubadora de Drebbel para empollar huevos de gallina.</figcaption>
+</figure>
+
+<p>La búsqueda de un medio para controlar la velocidad de rotación de un eje fue un problema famoso en las crónicas del control automático. La principal motivación era la de controlar automáticamente la velocidad de la piedra de molienda de un molino de viento harinero. De los varios métodos que se intentaron, el más prometedor resultó ser el que usaba un péndulo cónico, o regulador de bola flotante. Este dispositivo se usó para medir la velocidad del molino; las aspas del molino de viento se hacían girar con cuerdas y poleas, casi como persianas, para mantener una velocidad fija. Pero no fue el molino de viento es que hizo famoso el regulador de bola flotante, fue su adaptación a la máquina de vapor en los laboratorios de <a href="https://es.wikipedia.org/wiki/James_Watt">James Watt</a>, alrededor de 1788 &#40;&#123;numref&#125;<code>watt</code>&#41;.</p>
+
+<figure style="text-align:center;">
+<img src="/icia-2122/Unidad01/Vapor.png" style="padding:0; width:50%" alt=" Máquina de vapor con un regulador centrífugo o de bola flotante, que aparece en la parte derecha de la imagen."/>
+<figcaption> Máquina de vapor con un regulador centrífugo o de bola flotante, que aparece en la parte derecha de la imagen.</figcaption>
+</figure>
+
+<p>La acción del regulador centrífugo es fácil de describir. Supongamos que la máquina está operando en equilibrio y aplicamos de pronto una carga. En ese momento disminuirá la velocidad de la máquina y las bolas del regulador caerán a un cono más pequeño. De este modo, el ángulo de las bolas se usa como sensor de salida. Esta acción, a través de palancas, abrirá la válvula principal al núcleo de vapor &#40;que es el actuador&#41; y admitirá más vapor a la máquina, recuperando la totalidad de la velocidad perdida. Para mantener la válvula de vapor en una nueva posición es necesario que las bolas giren a un ángulo diferente, lo que implica que la velocidad con una carga no es exactamente la misma que la anterior. Para recobrar la misma velocidad en este sistema, sería necesario reponer la velocidad deseada cambiando la longitud de la barra de la palanca a la válvula. Otros inventores introdujeron mecanismos que integraron el error de velocidad y así proporcionaron una reposición automáticas. Estos sistemas tienen error estacionario cero a perturbaciones constantes.</p>
+<p>Watt fue un hombre práctico, como el constructor de molinos anterior a él, y no se ocupó de análisis teóricos del regulador. En este sentido son de gran importancia las contribuciones de <a href="https://es.wikipedia.org/wiki/George_Biddell_Airy">G.B. Airy</a>, que fue profesor de matemáticas y astronomía de la Universidad de Cambridge desde 1826 a 1835 y Astrónomo Real en el Observatorio de Greenwich desde 1835 a 1881. Airy se interesó por el control de la velocidad; si sus telescopios hubieran podido girar en sentido contrario a la Tierra, se habría podido observar una estrella fija durante largos períodos de tiempo. Él utilizó el regulador centrífugo de péndulo y descubrió que era capaz de movimiento inestable. Airy realizó la primera exposición histórica de la inestabilidad en un sistema de control, el análisis de un sistema a través de ecuaciones diferenciales y, por tanto, los comienzos del estudio de la dinámica de control con retroalimentación.</p>
+<h2 id="inicios_teóricos"><a href="#inicios_teóricos" class="header-anchor">Inicios teóricos</a></h2>
+<p>El primer estudio sistemático de la estabilidad del control retroalimentado apareció en el trabajo <em>On Governors</em> de <a href="https://es.wikipedia.org/wiki/James_Clerk_Maxwell">J.C. Maxwell</a> &#40;1868&#41;. En este trabajo, Maxwell desarrolla las ecuaciones diferenciales del regulador, linealizándolas en torno al equilibrio, y estableció que la estabilidad depende de que las raíces de una cierta ecuación &#40;característica&#41; tengan partes reales negativas. Lo consiguió solamente para los casos de segundo y tercer orden. El problema de la determinación de criterios de estabilidad sirvió para el premio Adams de 1877, que fue ganado por <a href="https://en.wikipedia.org/wiki/Edward_Routh">E.J. Routh</a>. Su criterio, desarrollado en el ensayo que obtuvo el premio, tiene el interés suficiente como para que los ingenieros de control sigan aprendiendo a aplicar su sencilla técnica. El análisis de la ecuación característica siguió siendo el fundamento de la teoría de control hasta la invención del amplificador retroalimentado electrónico por <a href="https://en.wikipedia.org/wiki/Harold_Stephen_Black">H.S. Black</a> en 1927 en los laboratorios de la Bell Telephone. Después de la publicación del trabajo de Routh, el matemático ruso <a href="https://es.wikipedia.org/wiki/Aleksandr_Liapunov">A.M. Lyapunov</a> comenzó a estudiar la cuestión de la estabilidad del movimiento; en 1892 utilizó las ecuaciones no lineales de movimiento e incluyó resultados equivalentes al criterio de Routh. Su trabajo fue fundamental, pero no se introdujo en la literatura de control hasta 1958.</p>
+<p>Con la introducción de los amplificadores electrónicos, las llamadas a larga distancia llegaron a ser posibles en las décadas posteriores a la Primera Guerra Mundial. Sin embargo, conforme la distancia aumenta, lo hace la pérdida de energía eléctrica, a pesar del uso del alambre de gran diámetro, y se requieren más y más amplificadores para reemplazar las pérdidas. Lamentablemente, con tantos amplificadores había mucha distorsión ya que las pequeñas no linealidades de los tubos de vacío se multiplicaban una y otra vez. Como solución a este problema, Black propuso el amplificador retroalimentado. Para reducir la distorsión hay que aumentar la retroalimentación, es decir, la ganancia del lazo del actuador debe aumentarse mucho. Todos los que han tratado de subir el volumen en un sistema de amplificación público mal ubicado han experimentado lo descubierto por Black; con altas ganancias el lazo de retroalimentación comienza a pitar y es inestable. Aquí, en una tecnología diferente estaba el problema de estabilidad de Maxwell y Routh, y la dinámica era tan compleja &#40;las ecuaciones diferenciales de orden 50 son muy comunes&#41; que el criterio de Routh no sirvió de mucho. Los ingenieros de comunicaciones estaban familiarizados con la idea de respuesta de frecuencia y con matemáticas de variable compleja desarrollada por Cauchy y otros, así que los trabajos en los laboratorios de la Bell se orientaron al análisis complejo. En 1932, <a href="https://es.wikipedia.org/wiki/Harry_Nyquist">H. Nyquist</a> publicó un artículo describiendo como determinar la estabilidad desde un gráfico de la respuesta de frecuencia del lazo. A partir de esta teoría se desarrolló una extensa metodología de diseño de amplificadores retroalimentados, descrita en el libro de <a href="https://es.wikipedia.org/wiki/Hendrik_Wade_Bode">H.W. Bode</a> &#40;1945&#41;.</p>
+<h2 id="implantación_en_la_industria"><a href="#implantación_en_la_industria" class="header-anchor">Implantación en la industria</a></h2>
+<p>Simultáneamente al desarrollo del amplificador retoralimentado, el control retroalimentado de procesos industriales empezó a ser la norma. En este campo, caracterizado por procesos que no solamente son muy complejos sino también no lineales y sujetos a retrasos de tiempo relativamente largos entre actuador y sensor, se desarrolló la práctica del control proporcional, más integral y más diferencial, el control PID descrito por Callender, Hartree y Porter &#40;1936&#41;. Esta tecnología, basada en un amplio trabajo experimental y aproximaciones linealizadas simples al sistema dinámico, llevó a experimentos estándar apropiados para la aplicación en el campo y finalmente a una satisfactoria sintonía de los coeficientes del controlador PID. También se desarrollaron en esta época los dispositivos para guía y control de aviones; especialmente importante fue el desarrollo de sensores adecuados para medición de altura y velocidad de los aviones.</p>
+<p>Se dio un enorme impulso al control retroalimentado durante la Segunda Guerra Mundial. En Estados Unidos, ingenieros y matemáticos del Laboratorio de Radiación del MIT combinaron sus conocimientos para aportar juntos no solamente la teoría de los amplificadores retroalimentados de Bode y el control PID de los procesos, sino también de procesos estocásticos desarrollados por <a href="https://en.wikipedia.org/wiki/Norbert_Wiener">N. Wiener</a> &#40;1930&#41;. El resultado fue el desarrollo de un conjunto completo de técnicas para el diseño de mecanismos de control, o servomecanismos, como también han sido llamados.</p>
+<p>Otro enfoque al diseño de sistemas de control se introdujo en 1948 por <a href="https://en.wikipedia.org/wiki/Walter_R._Evans">W.R. Evans</a>, que trabajaba en el campo de guía y control de aviones. Muchos de estos problemas tiene estados dinámicos inestables o neutralmente estables, y él sugirió un retorno al estudio de la ecuación característica que había sido la base del trabajo de Maxwell y Routh 70 años antes. Sin embargo Evans desarrolló técnicas y reglas que permiten seguir gráficamente los pasos de los lugares geométricos de las raíces de la ecuación característica cuando se cambiaba un parámetro. Su método, el lugar geométrico de las raíces, es adecuado para el diseño y análisis de estabilidad y continúa siendo hoy día una técnica importante.</p>
+<script type="text/javascript" src="/icia-2122/libs/ansi_up.js" defer></script>
+
+<div id="copyright" class="docs-footer container grid-lg">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Javier Arántegui
+</div>
+</div><!-- CONTENT ENDS HERE -->
+    </div>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>

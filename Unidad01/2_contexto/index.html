@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/icia-2122/assets/favicon.png">
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  };
+</script>
+
+<!-- This weird alignment is required by Franklin's parser. -->
+<script
+    async
+    src="/icia-2122/assets/MathJax/MathJax-3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff">
+}
+</style>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff">
+}
+</style>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff">
+}
+</style>
+
+  <link rel="stylesheet"
+  href="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/styles/github.min.css">
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/highlight.min.js">
+</script>
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/languages/julia.min.js">
+</script>
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/languages/julia-repl.min.js">
+</script>
+
+<script>
+  hljs.configure({tabReplace: '    '});
+  hljs.highlightAll();
+</script>
+
+    <style>
+    @font-face {
+      font-family: JuliaMono-Regular;
+      src: url("/JuliaTutorialsTemplate//assets/JuliaMono/juliamono-0.044/webfonts/JuliaMono-Regular.woff2");
+    }
+    </style>
+
+  <link rel="stylesheet" href="/icia-2122/css/spectre.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-exp.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-icons.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-overrides.css">
+  <link rel="stylesheet" href="/icia-2122/css/docs.min.css">
+
+  <title>Contexto de la disciplina - Control de Procesos 21-22</title>
+  <meta name="description" content="A template for building websites with Julia language content. Easily create Pluto notebooks and publish them online.">
+</head>
+<body>
+  <div class="docs-container off-canvas off-canvas-sidebar-show">
+  <div class="docs-navbar">
+    <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+    <div class="btns d-flex">
+      <a class="btn btn-primary ml-1" href="https://github.com/runjaj/icia-2122">GitHub</a>
+    </div>
+</div>
+
+<div id="sidebar" class="docs-sidebar off-canvas-sidebar">
+
+<div class="docs-brand">
+    <h5><a href="/icia-2122/">Control de procesos 21-22</a></h5>
+</div>
+
+<div class="docs-nav">
+<div class="accordion-container">
+  <ul class="menu menu-nav">
+    <div class="menu-header">Presentación</div>
+    <li class='menu-item '><a href='/icia-2122/index/'>Presentación</a></li>
+    <br/>
+    <div class="menu-header">Unidad 1. Introducción</div>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/unidad01/'>1. Introducción</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/1_historia/'>1.1. Breve historia del control de procesos</a></li>
+    <li class='menu-item active'><a href='/icia-2122/Unidad01/2_contexto/'>1.2. Contexto de la disciplina</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/3_descripción/'>1.3. Descripción cualitativa de un ejemplo de proceso alimentario y su sistemas de control</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/4_conceptos/'>1.4. Conceptos generales</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/problemas01/'>Problemas</a></li>
+  </ul>
+</div>
+</div>
+</div>
+<a class="off-canvas-overlay" href="#close"></a>
+
+
+<div class="off-canvas-content">
+<div id="content" class="docs-content">
+<div class="container">
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="contexto_de_la_disciplina"><a href="#contexto_de_la_disciplina" class="header-anchor">Contexto de la disciplina</a></h1>
+<p>Una industria alimentaria es una serie de operaciones básicas &#40;bombas, intercambiadores de calor, evaporadores, etc.&#41; integradas de una manera sistemática y racional.</p>
+<p>El proceso, entre otros requerimientos, debe cumplir con las exigencias de:</p>
+<ol>
+<li><p><strong>Seguridad</strong>.</p>
+</li>
+<li><p><strong>Especificaciones de producción</strong>: La planta debe producir la  cantidad y la calidad de productos finales requeridos.</p>
+</li>
+<li><p><strong>Regulaciones medioambientales</strong>.</p>
+</li>
+<li><p><strong>Restricciones de proceso</strong>: Las bombas no pueden trabajar si no  tienen una succión neta positiva en cabeza, los tanques no pueden  rebosar o vaciarse completamente, etc.</p>
+</li>
+<li><p><strong>Economía</strong>: El proceso debe trabajar en los niveles óptimos de  mínimo gasto económico y máximo beneficio.</p>
+</li>
+</ol>
+<p>Para cumplir estos objetivos se debe constituir el sistema de control, que está formado por personas &#40;diseñadores de planta, operadores de planta&#41; y equipo &#40;dispositivos de medida, válvulas, controladores, ordenadores&#41;. El sistema de control para cumplir estos objetivos debe:</p>
+<ol>
+<li><p>Suprimir la influencia de perturbaciones externas.</p>
+</li>
+<li><p>Asegurar la estabilidad del proceso.</p>
+</li>
+<li><p>Optimizar el rendimiento del proceso.</p>
+</li>
+</ol>
+<script type="text/javascript" src="/icia-2122/libs/ansi_up.js" defer></script>
+
+<div id="copyright" class="docs-footer container grid-lg">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Javier Arántegui
+</div>
+</div><!-- CONTENT ENDS HERE -->
+    </div>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>

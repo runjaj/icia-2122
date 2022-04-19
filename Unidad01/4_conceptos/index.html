@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/icia-2122/assets/favicon.png">
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true,
+    }
+  };
+</script>
+
+<!-- This weird alignment is required by Franklin's parser. -->
+<script
+    async
+    src="/icia-2122/assets/MathJax/MathJax-3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff">
+}
+</style>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff">
+}
+</style>
+
+<style>
+@font-face {
+  src: url("/JuliaTutorialsTemplate//assets/MathJax/MathJax-3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff">
+}
+</style>
+
+  <link rel="stylesheet"
+  href="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/styles/github.min.css">
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/highlight.min.js">
+</script>
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/languages/julia.min.js">
+</script>
+
+<script
+  src="/icia-2122/assets/Highlight/cdn-release-11.5.0/build/languages/julia-repl.min.js">
+</script>
+
+<script>
+  hljs.configure({tabReplace: '    '});
+  hljs.highlightAll();
+</script>
+
+    <style>
+    @font-face {
+      font-family: JuliaMono-Regular;
+      src: url("/JuliaTutorialsTemplate//assets/JuliaMono/juliamono-0.044/webfonts/JuliaMono-Regular.woff2");
+    }
+    </style>
+
+  <link rel="stylesheet" href="/icia-2122/css/spectre.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-exp.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-icons.min.css">
+  <link rel="stylesheet" href="/icia-2122/css/spectre-overrides.css">
+  <link rel="stylesheet" href="/icia-2122/css/docs.min.css">
+
+  <title>Conceptos generales - Control de Procesos 21-22</title>
+  <meta name="description" content="A template for building websites with Julia language content. Easily create Pluto notebooks and publish them online.">
+</head>
+<body>
+  <div class="docs-container off-canvas off-canvas-sidebar-show">
+  <div class="docs-navbar">
+    <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+    <div class="btns d-flex">
+      <a class="btn btn-primary ml-1" href="https://github.com/runjaj/icia-2122">GitHub</a>
+    </div>
+</div>
+
+<div id="sidebar" class="docs-sidebar off-canvas-sidebar">
+
+<div class="docs-brand">
+    <h5><a href="/icia-2122/">Control de procesos 21-22</a></h5>
+</div>
+
+<div class="docs-nav">
+<div class="accordion-container">
+  <ul class="menu menu-nav">
+    <div class="menu-header">Presentación</div>
+    <li class='menu-item '><a href='/icia-2122/index/'>Presentación</a></li>
+    <br/>
+    <div class="menu-header">Unidad 1. Introducción</div>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/unidad01/'>1. Introducción</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/1_historia/'>1.1. Breve historia del control de procesos</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/2_contexto/'>1.2. Contexto de la disciplina</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/3_descripción/'>1.3. Descripción cualitativa de un ejemplo de proceso alimentario y su sistemas de control</a></li>
+    <li class='menu-item active'><a href='/icia-2122/Unidad01/4_conceptos/'>1.4. Conceptos generales</a></li>
+    <li class='menu-item '><a href='/icia-2122/Unidad01/problemas01/'>Problemas</a></li>
+  </ul>
+</div>
+</div>
+</div>
+<a class="off-canvas-overlay" href="#close"></a>
+
+
+<div class="off-canvas-content">
+<div id="content" class="docs-content">
+<div class="container">
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="conceptos_generales"><a href="#conceptos_generales" class="header-anchor">Conceptos generales</a></h1>
+<p>tip&#123;En el <a href="prob101">problema 1</a> a&#41; se muestra la diferencia existente en un sistema de control de un tostador de pan si el control es de lazo abierto &#40;control en adelanto&#41; o si es de lazo cerrado &#40;control por retroalimentación&#41;.&#125;</p>
+<ol>
+<li><p><strong>Dinámica</strong>: Comportamiento de un proceso dependiente del tiempo. En la teoría del control se estudia básicamente la dinámica de dos  tipos de sistema:</p>
+</li>
+</ol>
+<p>1.  *Sistema de lazo abierto*: Respuesta del sistema sin
+    controladores o con un control en adelanto &#40;*feedforward*&#41;.
+
+2.  *Sistema de lazo cerrado*: Comportamiento del sistema incluido
+    un control por retroalimentación &#40;*feedback*&#41;.</p>
+<ol start="2">
+<li><p><strong>Variables</strong>: A continuación se definen los diferentes tipos de variables implicados en la dinámica y control de sistemas:</p>
+<ol>
+<li><p><em>Variables manipulables</em>: Elementos del proceso que se pueden  modificar para controlar la planta. Normalmente se trata de  caudales.</p>
+</li>
+<li><p><em>Variables controladas</em>: Parámetros de proceso –caudales,  niveles, temperaturas, presiones, etc.– que se quieren  controlar, ya sea para mantenerlos constantes o para seguir una  cierta evolución con el tiempo.</p>
+</li>
+<li><p><em>Variables no controladas</em>: Variables del proceso que no son  controladas aunque pueden ser medidas.</p>
+</li>
+<li><p><em>Perturbaciones</em>: Entradas al proceso que no pueden ser  controladas pero que deben tener un valor fijo en el proceso.</p>
+</li>
+</ol>
+</li>
+<li><p><strong>Consigna &#40;<em>Set point</em>&#41;</strong>: Es el valor deseado de la variable a  controlar. Puede ser constante o variar con el tiempo.</p>
+</li>
+<li><p><strong>Control en adelanto &#40;<em>Feedforward</em>&#41;</strong>: Se trata de un sistema de  control de lazo abierto. Se detecta la perturbación cuando entra en  el proceso y se realiza el cambio necesario en las variables  manipulables para que la variable controlada se mantenga constante.</p>
+</li>
+</ol>
+<p>tip&#123;Se muestra un sistema de control en adelanto en el <a href="prob101">problema 1</a> b&#41;. Se trata del sistema de control de una lavadora.&#125;</p>
+<p>Para este sistema es necesaria una calibración del sistema de
+control. Es importante resaltar que no se mide en ningún momento la
+variable controlada.</p>
+<p>tip&#123;En el apartado c&#41; del <a href="prob101">problema 1</a> se muestra que el sistema de control automático de un avión es un sistema de control por retroalimentación.&#125;</p>
+<ol start="5">
+<li><p><strong>Control por retroalimentación &#40;<em>Feedback</em>&#41;</strong>: Se mide la variable  controlada a la salida del proceso y se compara con la consigna &#40;el  valor deseado de la variable controlada&#41;. La diferencia &#40;error&#41; se  alimenta al controlador por retroalimentación que modifica la  variable manipulable.</p>
+</li>
+</ol>
+<p>tip&#123;En el <a href="prob102">problema 2</a> hay una discusión sobre las ventajas e inconvenientes del control por retroalimentación y en adelanto de un  sistema de control de temperatura de un edificio.&#125;</p>
+<p>Comparativa de los controladores en adelanto y los controladores por retroalimentación</p>
+<table><tr><th align="left"><strong>Feedforward</strong></th><th align="left"><strong>Feedback</strong></th></tr><tr><td align="left"><em>Ventajas</em></td><td align="left"></td></tr><tr><td align="left">1. Actúa antes de que la perturbación sea introducida en el sistema.</td><td align="left">1. No inicia la acción de control hasta que aparece la perturbación.</td></tr><tr><td align="left">2. Bueno para sistemas lentos &#40;multicapacidad&#41; o con tiempos muertos significativos.</td><td align="left">2. Es insatisfactorio para procesos lentos con tiempos muertos significativos.</td></tr><tr><td align="left">3. No introduce inestabilidad debida a la respuesta de ciclo cerrado.</td><td align="left">3. La respuesta de bucle cerrado puede crear inestabilidad.</td></tr><tr><td align="left">4. Requiere un buen conocimiento del modelo del proceso.</td><td align="left">4. No es necesario el conocimiento del modelo del proceso.</td></tr><tr><td align="left">5. No requiere la identificación y medida de  todas las perturbaciones.</td><td align="left">5. Requiere la identificación de las posibles  perturbaciones y su medida directa.</td></tr><tr><td align="left">6. Es insensible a los errores de modelado.</td><td align="left">6. No puede operar con perturbaciones no  medibles.</td></tr><tr><td align="left">7. Es insensible a los cambios de parámetros.</td><td align="left">7. Sensible a las variaciones de los parámetros del proceso.</td></tr></table>
+<ol start="6">
+<li><p><strong>Estabilidad</strong>: Un proceso es inestable si su salida se va haciendo  mayor &#40;positiva o negativamente&#41; con el tiempo.</p>
+<p>La mayoría de los sistemas de lazo abierto son estables. Todos los  sistemas de lazo cerrado son inestables si la ganancia del  controlador se hace los suficientemente grande. Normalmente el  rendimiento del controlador aumenta con la ganancia, pero disminuye  su tolerancia a los cambios de parámetros del proceso.</p>
+</li>
+<li><p><strong>Control analógico</strong>: En este caso los datos son medidos de manera  continua en el tiempo.</p>
+</li>
+<li><p><strong>Control digital</strong>: Se da cuando los datos son medidos de manera  discreta ya sea debido a la utilización de computadores digitales o  debido a métodos de medida muy lentos en comparación con la dinámica  del proceso. P.ej., análisis mediante cromatografía.</p>
+</li>
+<li><p><strong>Leyes del Control de Procesos</strong>:</p>
+<ol>
+<li><p><em>Primera ley</em>: El sistema de control más simple es el que mejor  funcionará.</p>
+</li>
+<li><p><em>Segunda ley</em>: Se debe entender el proceso antes de intentar  controlarlo.</p>
+</li>
+</ol>
+</li>
+<li><p><strong>Elementos físicos de un sistema de control</strong>:</p>
+<ol>
+<li><p><em>Instrumentos de medida o sensores</em>: Son los elementos de  control encargados de medir las perturbaciones, las variables  controladas, etc. Son las principales fuentes de información de  cómo va el proceso. Un elemento crucial para la selección de un  sensor es su capacidad de transmitir información fácilmente.  P.ej., es preferible un termopar a un termómetro de mercurio.</p>
+</li>
+<li><p><em>Transductores</em>: Elementos del sistema de control que convierten  magnitudes físicas que no pueden ser utilizadas para el control  en otras que sí lo pueden ser &#40;una corriente eléctrica o una  señal neumática, p.ej.&#41;. P.ej., convertir una señal de presión  en una señal eléctrica.</p>
+</li>
+<li><p><em>Lineas de transmisión</em>: Llevan la señal desde el sensor al  controlador y del controlador al elemento final de control. La  transmisión acostumbra a ser eléctrica o neumática.  Frecuentemente se debe amplificar la señal del sensor antes de  transmitirla.</p>
+</li>
+<li><p><em>Controlador</em>: Recibe las señales de los sensores y decide la  acción que se debe tomar.</p>
+</li>
+<li><p><em>Elemento final de control</em>: Es el dispositivo físico que lleva  a cabo la decisión del controlador. Típicamente es una válvula  aunque también puede ser una bomba de velocidad variable, una  compuerta, ...</p>
+</li>
+<li><p><em>Registradores</em>: Proveen de un soporte visual y registro  histórico del funcionamiento del sistema.</p>
+</li>
+</ol>
+</li>
+</ol>
+<script type="text/javascript" src="/icia-2122/libs/ansi_up.js" defer></script>
+
+<div id="copyright" class="docs-footer container grid-lg">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Javier Arántegui
+</div>
+</div><!-- CONTENT ENDS HERE -->
+    </div>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>

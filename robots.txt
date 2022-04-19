@@ -1,0 +1,4 @@
+Sitemap: https://runjaj.github.io/icia-2122/sitemap.xml
+
+User-agent: *
+Disallow:
