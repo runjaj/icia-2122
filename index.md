@@ -35,26 +35,25 @@ En esta parte queremos sentar las bases del control de procesos por retroaliment
 Los objetivos específicos para lograrlo son:
 
 - **Introducción:**
-	* Conocer la importancia del control de procesos en la industria alimentaria moderna.
-	* Conocer los principales elementos de un lazo de control.
-	* Conocer los principales instrumentos de medida y actuadores utilizados en la industria alimentaria.
-	* Decidir con criterio en que casos utilizar un sistema de control por retroalimentación o en adelanto.
+  * Conocer la importancia del control de procesos en la industria alimentaria moderna.
+  * Conocer los principales elementos de un lazo de control.
+  * Conocer los principales instrumentos de medida y actuadores utilizados en la industria alimentaria.
+  * Decidir con criterio en que casos utilizar un sistema de control por retroalimentación o en adelanto.
 - **Dinámica de sistemas de control por retroalimentación:**
-	* Plantear el modelo matemático de una operación básica o de un proceso alimentaria para poder predecir su comportamiento en función del tiempo.
-	* Analizar un sistema de control por retroalimentación.
-	* Conocer que lazos de control existen en los proncipales procesos alimentarios.
-	* Conocer el comportamiento dinámico de las principales acciones de control.
-	* Valorar la influencia de los retrasos en el comportamiento dinámico de un sistema de control.
-	* Calcular el comportamiento dinámico de un lazo de control por retroalimentación.
+  * Plantear el modelo matemático de una operación básica o de un proceso alimentaria para poder predecir su comportamiento en función del tiempo.
+  * Analizar un sistema de control por retroalimentación.
+  * Conocer que lazos de control existen en los proncipales procesos alimentarios.
+  * Conocer el comportamiento dinámico de las principales acciones de control.
+  * Valorar la influencia de los retrasos en el comportamiento dinámico de un sistema de control.
+  * Calcular el comportamiento dinámico de un lazo de control por retroalimentación.
 - **Diseño de sistemas de control:**
-	* Diseñar un lazo de control por retroalimentación de un procesos, seleccionando adecuadamente el controlador y sus parámetros óptimos.
-	* Tener la capacidad de implementar un lazo de control en un proceso alimentario.
-	* Ser capaz de evaluar y mejorar el comportamiento de un lazo de contro existmnte.
+  * Diseñar un lazo de control por retroalimentación de un procesos, seleccionando adecuadamente el controlador y sus parámetros óptimos.
+  * Tener la capacidad de implementar un lazo de control en un proceso alimentario.
+  * Ser capaz de evaluar y mejorar el comportamiento de un lazo de contro existmnte.
 
-<!--
 #### Contenido de la asignatura y calendario previsto
 
-Este es la planificación prevista de la asignatura:
+Este es la planificación prevista de la asignatura (**Pendiente de revisar**):
 
 **Día** - Contenido (Horas)
 
@@ -124,7 +123,7 @@ Este es la planificación prevista de la asignatura:
 
 **21 de junio**
 : EXAMEN
-→
+
 
 #### Bibliografía y otro material
 
