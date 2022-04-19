@@ -15,5 +15,21 @@ generate_rss = false
 website_title = "Control de Procesos 21-22"
 website_descr = "Apuntes de Control de Procesos 21-22"
 website_url   = "https://runjaj.github.io/icia-2122/"
+
+
 +++
 
+\newcommand{\figenv}[3]{
+~~~
+<figure style="text-align:center;">
+<img src="!#2" style="padding:0;#3" alt="#1"/>
+<figcaption>#1</figcaption>
+</figure>
+~~~
+}
+
+\newcommand{\note}[1]{@@note @@title ⚠ Note@@ @@content #1 @@ @@}
+
+\newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
+
+\newcommand{\tip}[1]{@@tip @@title ⚠ Tip@@ @@content #1 @@ @@}
